@@ -24,15 +24,26 @@ Bookmarklet for quickly detecting technologies in use on the web. Really useful 
   * Require.js
   * Scriptalicious
   * Modernizr
-  * Cufon
+  * Cufón
+  * Typekit
   * SWFObject
 * Detects popular analytics and other feedback scripts;
   * Google Analytics
   * Mint
+  * Mixpanel
+  * Piwik
+  * Yahoo Small Business Hosting Analytics
   * Gauges
   * ComScore
   * QuantCast
   * New Relic
 * Detects social plug-ins
   * AddThis
-  * (This will be expanded upon soon)
+  * Disqus
+  * Facebook JS API
+  * Google+ API
+  * Facebook Widgets (Old-style and new-style)
+
+## Get it
+
+Get it from the [Github Page](http://ticky.github.com/tech-audit-bookmarklet).
