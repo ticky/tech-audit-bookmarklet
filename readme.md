@@ -5,38 +5,38 @@ Bookmarklet for quickly detecting technologies in use on the web. Really useful 
 ## Features
 
 * Detects many popular JavaScript libraries and frameworks, including;
+  * ASP .Net Web Forms
+  * Backbone.js
+  * Cufón
+  * Dojo
   * jQuery
   * jQuery UI
   * jQuery Fancybox
-  * Zepto
-  * Dojo
+  * Modernizr
   * MooTools
-  * Sencha / ExtJS
-  * YUI
-  * SproutCore
-  * Uize
-  * Spry
-  * Sizzle
-  * Backbone.js
-  * Underscore.js
   * Prototype.js
-  * ASP .Net Web Forms
   * Require.js
   * Scriptalicious
-  * Modernizr
-  * Cufón
-  * Typekit
+  * Sencha / ExtJS
+  * Sizzle
+  * SproutCore
+  * Spry
   * SWFObject
+  * Typekit
+  * Uize
+  * Underscore.js
+  * YUI
+  * Zepto
 * Detects popular analytics and other feedback scripts;
+  * ComScore
+  * Gauges
   * Google Analytics
   * Mint
   * Mixpanel
-  * Piwik
-  * Yahoo Small Business Hosting Analytics
-  * Gauges
-  * ComScore
-  * QuantCast
   * New Relic
+  * Piwik
+  * QuantCast
+  * Yahoo Small Business Hosting Analytics
 * Detects social plug-ins
   * AddThis
   * Disqus

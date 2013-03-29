@@ -1,1 +1,91 @@
-(function(a,b,c,d){var e=[],f=[],g=function(a){e.push(a)},h=function(a){f.push(a)},i=function(b){var c=new XMLHttpRequest;c.open("GET",""+a.location,!0),c.onreadystatechange=function(){if(4==c.readyState&&200==c.status){for(var d=""+c.getAllResponseHeaders(),e=d.split(/\r?\n/),f={},g=0;e.length>g;g++){var h=e[g].split(": ");f[h[0]]=h[1]}b(f)}},c.send(null)};(typeof jQuery!=b||typeof $!=b&&typeof $.jquery!=b)&&(g("jQuery "+jQuery.fn.jquery||$.jquery),(typeof jQuery.ui!=b||typeof $!=b&&typeof $.fn!=b&&typeof $.fn.ui!=b)&&g("jQuery UI "+jQuery.ui.version||$.ui.version),(typeof jQuery.fancybox!=b||typeof $!=b&&typeof $.fn!=b&&typeof $.fn.fancybox!=b)&&g("jQuery Fancybox")),typeof $!=b&&typeof $.zepto!=b&&g("Zepto"),typeof dojo!=b&&g("Dojo "+(""+dojo.version)),typeof MooTools!=b&&g("MooTools "+MooTools.version),typeof Ext!=b&&g("Sencha (ExtJS) "+Ext.version),typeof YUI!=b&&g("YUI "+YUI.version),typeof SC!=b&&g("SproutCore "+SC.VERSION),typeof Uize!=b&&g("Uize"),typeof Spry!=b&&g("Spry"),typeof Sizzle!=b&&g("Sizzle"),typeof Backbone!=b&&g("Backbone.js "+Backbone.VERSION),typeof _!=b&&typeof _.VERSION!=b&&g("Underscore.js "+_.VERSION),typeof Prototype!=b&&g("Prototype.js "+Prototype.Version),typeof WebForm_PostBackOptions!=b&&g("ASP.Net Web Forms"),(typeof requirejs!=b||typeof require!=b)&&g("Require.js "+requirejs.version||require.version),typeof Scriptalicious!=b&&g("Scriptalicious "+Scriptalicious.Version),typeof Modernizr!=b&&g("Modernizr "+Modernizr._version),typeof Cufon!=b&&g("Cuf\u00f3n"),typeof Typekit!=b&&g("Typekit"),typeof swfobject!=b&&g("SWFObject"),typeof udm_!=b&&g("ComScore"),typeof _gauges!=b&&g("Gauges"),typeof _gaq!=b&&g("Google Analytics"),typeof Mint!=b&&g("Mint"),typeof Mixpanel!=b&&g("Mixpanel"),typeof NREUM!=b&&g("New Relic"),typeof Piwik!=b&&g("Piwik"),typeof __qc!=b&&g("QuantCast"),typeof ycsdone!=b&&g("Yahoo Analytics"),typeof addthis!=b&&g("AddThis"),typeof DISQUSWIDGETS!=b&&g("Disqus"),typeof FB!=b&&g("Facebook Javascript SDK"),typeof gapi!=b&&g("Google+ API"),(typeof __twttrlr!=b||typeof twttr!=b)&&g("Twitter Widgets"),confirm("Clientside Technology:\n"+c+(e.join(c)||d)+"\n\nDetect serverside technology?\n(Downloads the page again)")&&i(function(a){typeof a["X-Powered-By"]!=b&&h("Powered By: "+a["X-Powered-By"]),typeof a.Server!=b&&h("Server: "+a.Server),alert("Serverside Technology:\n"+c+(f.join(c)||d))})})(window,"undefined","\n\u2022 ","Unknown!");
+javascript:(function(w,u,b,n){
+
+  var l = [],
+    s = [],
+    p = function(t){ l.push(t); },
+    q = function(v){ s.push(v); },
+    r = function(c){
+      var x = new XMLHttpRequest();
+        x.open('GET', w.location.toString(), true);
+        x.onreadystatechange = function(e) {
+          if (x.readyState == 4 && x.status == 200)
+          {
+            var h = x.getAllResponseHeaders().toString();
+            var i = h.split(/\r?\n/);
+            var k = {};
+            for (var j = 0; j < i.length; j++) {
+              var m = i[j].split(': ');
+              k[m[0]] = m[1];
+            };
+            c(k);
+          }
+        };
+        x.send(null);
+    };
+
+  // Plugins and frameworks
+  if (typeof WebForm_PostBackOptions != u) { p("ASP.Net Web Forms"); }
+  if (typeof Backbone != u)       { p("Backbone.js " + Backbone.VERSION); }
+  if (typeof Cufon != u)          { p("Cuf\u00f3n"); }
+  if (typeof dojo != u)           { p("Dojo " + dojo.version.toString()); }
+  if (typeof jQuery != u || (typeof $ != u && typeof $.jquery != u)) {
+    p("jQuery " + jQuery.fn.jquery || $.jquery);
+    // jQuery Plug-Ins
+    if (typeof jQuery.ui != u ||
+      (typeof $ != u &&
+      typeof $.fn != u &&
+      typeof $.fn.ui != u)) { p("jQuery UI " + jQuery.ui.version || $.ui.version); }
+    if (typeof jQuery.fancybox != u ||
+      (typeof $ != u &&
+      typeof $.fn != u &&
+      typeof $.fn.fancybox != u)) { p("jQuery Fancybox"); }
+  }
+  if (typeof Modernizr != u)      { p("Modernizr " + Modernizr._version); }
+  if (typeof MooTools != u)       { p("MooTools " + MooTools.version); }
+  if (typeof Prototype != u)      { p("Prototype.js " + Prototype.Version); }
+  if (typeof requirejs != u ||
+      typeof require != u)        { p("Require.js " + requirejs.version || require.version); }
+  if (typeof Scriptalicious != u) { p("Scriptalicious " + Scriptalicious.Version); }
+  if (typeof Ext != u)            { p("Sencha (ExtJS) " + Ext.version); }
+  if (typeof Sizzle != u)         { p("Sizzle"); }
+  if (typeof SC != u)             { p("SproutCore " + SC.VERSION); }
+  if (typeof Spry != u)           { p("Spry"); }
+  if (typeof swfobject != u)      { p("SWFObject"); }
+  if (typeof Typekit != u)        { p("Typekit"); }
+  if (typeof Uize != u)           { p("Uize"); }
+  if (typeof _ != u &&
+      typeof _.VERSION != u)      { p("Underscore.js " + _.VERSION); }
+  if (typeof YUI != u)            { p("YUI " + YUI.version); }
+  if (typeof $ != u &&
+      typeof $.zepto != u)        { p("Zepto"); }
+
+  // Analytics and Performance Metrics
+  if (typeof udm_ != u)           { p("ComScore"); }
+  if (typeof _gauges != u)        { p("Gauges"); }
+  if (typeof _gaq != u)           { p("Google Analytics"); }
+  if (typeof Mint != u)           { p("Mint"); }
+  if (typeof Mixpanel != u)       { p("Mixpanel"); }
+  if (typeof NREUM != u)          { p("New Relic"); }
+  if (typeof Piwik != u)          { p("Piwik"); }
+  if (typeof __qc != u)           { p("QuantCast"); }
+  if (typeof ycsdone != u)        { p("Yahoo Analytics"); }
+
+  // Social Plugins
+  if (typeof addthis != u)        { p("AddThis"); }
+  if (typeof DISQUSWIDGETS != u)  { p("Disqus"); }
+  if (typeof FB != u)             { p("Facebook Javascript SDK"); }
+  if (typeof gapi != u)           { p("Google+ API"); }
+  if (typeof __twttrlr != u ||
+      typeof twttr != u)          { p("Twitter Widgets"); }
+
+  if(confirm("Clientside Technology:\n" + b + (l.join(b) || n) + "\n\nDetect serverside technology?\n(Downloads the page again)"))
+  {
+    r(function (o) {
+      if(typeof o['X-Powered-By'] != u) { q("Powered By: " + o['X-Powered-By']); }
+      if(typeof o.Server != u) { q("Server: " + o.Server); }
+
+      alert("Serverside Technology:\n" + b + (s.join(b) || n));
+    });
+  }
+
+}(window,"undefined","\n• ","Unknown!"));
