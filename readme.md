@@ -9,6 +9,7 @@ Bookmarklet for quickly detecting technologies in use on the web. Really useful 
   * Backbone.js
   * Cufón
   * Dojo
+  * Zurb Foundation (JavaScript library only)
   * jQuery
   * jQuery UI
   * jQuery Fancybox
