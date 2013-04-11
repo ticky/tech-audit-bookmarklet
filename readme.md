@@ -47,4 +47,4 @@ Bookmarklet for quickly detecting technologies in use on the web. Really useful 
 
 ## Get it
 
-Get it from the [Github Page](http://geoffstokes.github.com/tech-audit-bookmarklet).
+Get it from the [Github Page](http://geoffstokes.github.io/tech-audit-bookmarklet).
