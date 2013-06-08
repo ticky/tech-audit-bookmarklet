@@ -27,7 +27,9 @@ javascript:(function(listDelimiter,unknownString,maskedEval){
   // Plugins and frameworks
   if (isDefined("WebForm_PostBackOptions")) { clientSideListAdd(["ASP.Net Web Forms"]); }
   if (isDefined("Backbone"))       { clientSideListAdd(["Backbone.js", Backbone.VERSION]); }
+  if (isDefined("angular"))        { clientSideListAdd(["Angular.js", angular.version.full, '(' + angular.version.codeName + ')']); }
   if (isDefined("Cufon"))          { clientSideListAdd(["Cuf\u00f3n"]); }
+  if (isDefined("d3"))             { clientSideListAdd(["D3.js", d3.version]); }
   if (isDefined("dojo"))           { clientSideListAdd(["Dojo", dojo.version.toString()]); }
   if (isDefined("Foundation"))     { clientSideListAdd(["Zurb Foundation Core", Foundation.version]); }
   if (isDefined("jQuery") || (isDefined("$") && isDefined("$.jquery"))) {
@@ -51,6 +53,7 @@ javascript:(function(listDelimiter,unknownString,maskedEval){
   if (isDefined("SC"))             { clientSideListAdd(["SproutCore", SC.VERSION]); }
   if (isDefined("Spry"))           { clientSideListAdd(["Spry"]); }
   if (isDefined("swfobject"))      { clientSideListAdd(["SWFObject"]); }
+  if (isDefined("THREE"))          { clientSideListAdd(["three.js", THREE.REVISION]); }
   if (isDefined("Typekit"))        { clientSideListAdd(["Typekit"]); }
   if (isDefined("Uize"))           { clientSideListAdd(["Uize"]); }
   if (isDefined("_") &&

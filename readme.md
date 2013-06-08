@@ -6,8 +6,10 @@ Bookmarklet for quickly detecting technologies in use on the web. Really useful 
 
 * Detects many popular JavaScript libraries and frameworks, including;
   * ASP .Net Web Forms
+  * Angular.js
   * Backbone.js
   * Cufón
+  * D3
   * Dojo
   * Zurb Foundation (JavaScript library only)
   * jQuery
@@ -24,6 +26,7 @@ Bookmarklet for quickly detecting technologies in use on the web. Really useful 
   * SproutCore
   * Spry
   * SWFObject
+  * Three.js
   * Typekit
   * Uize
   * Underscore.js
