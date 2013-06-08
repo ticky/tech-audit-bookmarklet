@@ -54,7 +54,14 @@ javascript:(function(listDelimiter,unknownString,maskedEval){
   if (isDefined("Typekit"))        { clientSideListAdd(["Typekit"]); }
   if (isDefined("Uize"))           { clientSideListAdd(["Uize"]); }
   if (isDefined("_") &&
-      isDefined("_.VERSION"))      { clientSideListAdd(["Underscore.js", _.VERSION]); }
+      isDefined("_.VERSION"))      { 
+    // Lo-Dash has a "support" object, Underscore does not.
+    if (isDefined("_.support")) {
+      clientSideListAdd(["Lo-Dash", _.VERSION]);
+    } else {
+      clientSideListAdd(["Underscore.js", _.VERSION]);
+    }
+  }
   if (isDefined("YUI"))            { clientSideListAdd(["YUI", YUI.version]); }
   if (isDefined("$") &&
       isDefined("$.zepto"))        { clientSideListAdd(["Zepto"]); }

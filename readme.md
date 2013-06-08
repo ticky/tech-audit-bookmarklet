@@ -13,6 +13,7 @@ Bookmarklet for quickly detecting technologies in use on the web. Really useful 
   * jQuery
   * jQuery UI
   * jQuery Fancybox
+  * Lo-Dash
   * Modernizr
   * MooTools
   * Prototype.js
