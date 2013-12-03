@@ -18,6 +18,7 @@ Bookmarklet for quickly detecting technologies in use on the web. Really useful 
   * Lo-Dash
   * Modernizr
   * MooTools
+  * Movideo JavaScript SDK
   * Prototype.js
   * Require.js
   * Scriptalicious
@@ -39,6 +40,8 @@ Bookmarklet for quickly detecting technologies in use on the web. Really useful 
   * Mint
   * Mixpanel
   * New Relic
+  * NetRatings Site Census
+  * Optimix
   * Piwik
   * QuantCast
   * Yahoo Small Business Hosting Analytics
