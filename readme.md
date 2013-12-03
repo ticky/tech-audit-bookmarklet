@@ -31,16 +31,18 @@ Bookmarklet for quickly detecting technologies in use on the web. Really useful 
   * Typekit
   * Uize
   * Underscore.js
+  * YouTube iframe API
   * YUI
   * Zepto
 * Detects popular analytics and other feedback scripts;
   * ComScore
+  * CrazyEgg
   * Gauges
   * Google Analytics
   * Mint
   * Mixpanel
   * New Relic
-  * NetRatings Site Census
+  * Neilsen/NetRatings Site Census (5.x and 6.x)
   * Optimix
   * Piwik
   * QuantCast

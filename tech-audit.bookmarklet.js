@@ -81,11 +81,13 @@ javascript:(function(listDelimiter, unknownString, maskedEval) {
       clientSideListAdd(["Underscore.js", _.VERSION]);
     }
   }
+  if (isDefined("YT"))                      { clientSideListAdd(["YouTube iframe API"]); }
   if (isDefined("YUI"))                     { clientSideListAdd(["YUI", YUI.version]); }
   if (isDefined("$.zepto"))                 { clientSideListAdd(["Zepto"]); }
 
   // Analytics and Performance Metrics
   if (isDefined("udm_"))                    { clientSideListAdd(["ComScore"]); }
+  if (isDefined("CE2"))                     { clientSideListAdd(["CrazyEgg"]); }
   if (isDefined("_gauges"))                 { clientSideListAdd(["Gauges"]); }
   if (isDefined("_gaq"))                    { clientSideListAdd(["Google Analytics (Old Syntax)"]); }
   if (isDefined("ga"))                      { clientSideListAdd(["Google Analytics"]); }
@@ -93,7 +95,8 @@ javascript:(function(listDelimiter, unknownString, maskedEval) {
   if (isDefined("Mixpanel"))                { clientSideListAdd(["Mixpanel"]); }
   if (isDefined("NREUM"))                   { clientSideListAdd(["New Relic"]); }
   if (isDefined("NolTracker") ||
-      isDefined("trac.pvar"))               { clientSideListAdd(["NetRatings Site Census"]); }
+      isDefined("trac.pvar"))               { clientSideListAdd(["NetRatings Site Census 6.x"]); }
+  if (isDefined("rsCi"))                    { clientSideListAdd(["NetRatings Site Census 5.x"]); }
   if (isDefined("opxLoad"))                 { clientSideListAdd(["Optimix"]); }
   if (isDefined("Piwik"))                   { clientSideListAdd(["Piwik"]); }
   if (isDefined("__qc"))                    { clientSideListAdd(["QuantCast"]); }
