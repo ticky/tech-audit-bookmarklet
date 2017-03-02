@@ -4,8 +4,8 @@
   "description": "Bookmarklet for quickly detecting technologies in use on the web",
   "scripts": {
     "build": "babel tech-audit.js --out-file tech-audit.bookmarklet.js",
-    "lint": "eslint src",
-    "lint-and-fixup": "eslint --fix src"
+    "lint": "eslint tech-audit.js",
+    "lint-and-fixup": "eslint --fix tech-audit.js"
   },
   "repository": "https://github.com/ticky/tech-audit-bookmarklet.git",
   "author": "Jessica Stokes <hello@jessicastokes.net>",
@@ -18,6 +18,15 @@
   "babel": {
     "presets": [
       [
+        "babili",
+        {
+          "mangle": {
+            "topLevel": true,
+            "eval": true
+          }
+        }
+      ],
+      [
         "env",
         {
           "targets": {
@@ -28,8 +37,7 @@
             "modules": false
           }
         }
-      ],
-      "babili"
+      ]
     ]
   }
 }
