@@ -12,6 +12,7 @@
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.23.0",
+    "babel-preset-babili": "^0.0.11",
     "babel-preset-env": "^1.1.11"
   },
   "babel": {
@@ -20,11 +21,15 @@
         "env",
         {
           "targets": {
-            "browsers": ["> 5%", "last 2 versions"],
+            "browsers": [
+              "> 5%",
+              "last 2 versions"
+            ],
             "modules": false
           }
         }
-      ]
+      ],
+      "babili"
     ]
   }
 }
