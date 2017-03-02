@@ -1,0 +1,30 @@
+{
+  "name": "tech-audit-bookmarklet",
+  "version": "1.0.0",
+  "description": "Bookmarklet for quickly detecting technologies in use on the web",
+  "scripts": {
+    "build": "babel tech-audit.js --out-file tech-audit.bookmarklet.js",
+    "lint": "eslint src",
+    "lint-and-fixup": "eslint --fix src"
+  },
+  "repository": "https://github.com/ticky/tech-audit-bookmarklet.git",
+  "author": "Jessica Stokes <hello@jessicastokes.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-env": "^1.1.11"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": ["> 5%", "last 2 versions"],
+            "modules": false
+          }
+        }
+      ]
+    ]
+  }
+}
