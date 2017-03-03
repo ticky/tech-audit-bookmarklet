@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Bookmarklet for quickly detecting technologies in use on the web",
   "scripts": {
-    "build": "babel tech-audit.js --out-file tech-audit.bookmarklet.js",
+    "build": "babel tech-audit.js --out-file docs/tech-audit.bookmarklet.js",
     "lint": "eslint tech-audit.js",
     "lint-and-fixup": "eslint --fix tech-audit.js"
   },
