@@ -1,8 +1,19 @@
 {
-  const listDelimiter = "\n• ";
-  const unknownString = "Unknown!";
   const clientSideList = [];
   const serverSideList = [];
+
+  function add() {
+    this.push(Array.from(arguments).join(' '));
+  }
+
+  const renderListWithHeader = (header, list) => {
+    list = list || ['Unknown!'];
+    list.unshift(`${header}:\n`);
+    return list.join("\n• ");
+  };
+
+  const clientSideListAdd = add.bind(clientSideList);
+  const serverSideListAdd = add.bind(serverSideList);
 
   const isDefined = (obj) => typeof obj !== 'undefined';
   const isDeeplyDefined = (objectPath) => (
@@ -17,8 +28,6 @@
       )
     )
   );
-
-  const listAdd = (list, ...technology) => list.push(technology.join(" "));
 
   const requestPage = (callback) => {
     const currentXhr = new XMLHttpRequest();
@@ -44,234 +53,234 @@
 
   // Plugins and frameworks
   if (isDeeplyDefined("WebForm_PostBackOptions")) {
-    listAdd(clientSideList, "ASP.Net Web Forms");
+    clientSideListAdd("ASP.Net Web Forms");
   }
 
   /* global Backbone */
   if (isDeeplyDefined("Backbone")) {
-    listAdd(clientSideList, "Backbone.js", Backbone.VERSION);
+    clientSideListAdd("Backbone.js", Backbone.VERSION);
   }
 
   /* global angular */
   if (isDeeplyDefined("angular")) {
-    listAdd(clientSideList, "Angular.js", angular.version.full, '(' + angular.version.codeName + ')');
+    clientSideListAdd("Angular.js", angular.version.full, '(' + angular.version.codeName + ')');
   }
 
   if (isDeeplyDefined("Cufon")) {
-    listAdd(clientSideList, "Cuf\u00f3n");
+    clientSideListAdd("Cuf\u00f3n");
   }
 
   /* global d3 */
   if (isDeeplyDefined("d3")) {
-    listAdd(clientSideList, "D3.js", d3.version);
+    clientSideListAdd("D3.js", d3.version);
   }
 
   /* global dojo */
   if (isDeeplyDefined("dojo"))                    {
-    listAdd(clientSideList, "Dojo", dojo.version.toString());
+    clientSideListAdd("Dojo", dojo.version.toString());
   }
 
   /* global Foundation */
   if (isDeeplyDefined("Foundation")) {
-    listAdd(clientSideList, "Zurb Foundation Core", Foundation.version);
+    clientSideListAdd("Zurb Foundation Core", Foundation.version);
   }
 
   /* global jQuery, $ */
   if (isDeeplyDefined("jQuery.fn.jquery") || isDeeplyDefined("$.fn.jquery")) {
-    listAdd(clientSideList, "jQuery", jQuery.fn.jquery || $.fn.jquery);
+    clientSideListAdd("jQuery", jQuery.fn.jquery || $.fn.jquery);
   }
 
   if (isDeeplyDefined("jQuery.ui") || isDeeplyDefined("$.ui")) {
-    listAdd(clientSideList, "jQuery UI ", jQuery.ui.version || $.ui.version);
+    clientSideListAdd("jQuery UI", jQuery.ui.version || $.ui.version);
   }
 
   if (isDeeplyDefined("jQuery.fn.fancybox") || isDeeplyDefined("$.fn.fancybox")) {
-    listAdd(clientSideList, "jQuery Fancybox");
+    clientSideListAdd("jQuery Fancybox");
   }
 
   /* global Modernizr */
   if (isDeeplyDefined("Modernizr")) {
-    listAdd(clientSideList, "Modernizr", Modernizr._version);
+    clientSideListAdd("Modernizr", Modernizr._version);
   }
 
   /* global MooTools */
   if (isDeeplyDefined("MooTools")) {
-    listAdd(clientSideList, "MooTools", MooTools.version);
+    clientSideListAdd("MooTools", MooTools.version);
   }
 
   /* global MOVIDEO */
   if (isDeeplyDefined("MOVIDEO")) {
-    listAdd(clientSideList, "Movideo JavaScript SDK", MOVIDEO.version);
+    clientSideListAdd("Movideo JavaScript SDK", MOVIDEO.version);
   }
 
   /* global Prototype */
   if (isDeeplyDefined("Prototype")) {
-    listAdd(clientSideList, "Prototype.js", Prototype.Version);
+    clientSideListAdd("Prototype.js", Prototype.Version);
   }
 
   /* global requirejs */
   if (isDeeplyDefined("requirejs")) {
-    listAdd(clientSideList, "Require.js", requirejs.version);
+    clientSideListAdd("Require.js", requirejs.version);
   }
 
   if (isDeeplyDefined("require")) {
-    listAdd(clientSideList, "require");
+    clientSideListAdd("require");
   }
 
   /* global Scriptalicious */
   if (isDeeplyDefined("Scriptalicious")) {
-    listAdd(clientSideList, "Scriptalicious", Scriptalicious.Version);
+    clientSideListAdd("Scriptalicious", Scriptalicious.Version);
   }
 
   /* global Ext */
   if (isDeeplyDefined("Ext")) {
-    listAdd(clientSideList, "Sencha (ExtJS)", Ext.version);
+    clientSideListAdd("Sencha (ExtJS)", Ext.version);
   }
 
   if (isDeeplyDefined("Sizzle")) {
-    listAdd(clientSideList, "Sizzle");
+    clientSideListAdd("Sizzle");
   }
 
   /* global SC */
   if (isDeeplyDefined("SC")) {
-    listAdd(clientSideList, "SproutCore", SC.VERSION);
+    clientSideListAdd("SproutCore", SC.VERSION);
   }
 
   if (isDeeplyDefined("Spry")) {
-    listAdd(clientSideList, "Spry");
+    clientSideListAdd("Spry");
   }
 
   if (isDeeplyDefined("swfobject")) {
-    listAdd(clientSideList, "SWFObject");
+    clientSideListAdd("SWFObject");
   }
 
   /* global THREE */
   if (isDeeplyDefined("THREE")) {
-    listAdd(clientSideList, "three.js", THREE.REVISION);
+    clientSideListAdd("three.js", THREE.REVISION);
   }
 
   if (isDeeplyDefined("Typekit")) {
-    listAdd(clientSideList, "Typekit");
+    clientSideListAdd("Typekit");
   }
 
   if (isDeeplyDefined("Uize")) {
-    listAdd(clientSideList, "Uize");
+    clientSideListAdd("Uize");
   }
 
   /* global _ */
   if (isDeeplyDefined("_.VERSION")) {
     // Lo-Dash has a "support" object, Underscore does not.
     if (isDeeplyDefined("_.support")) {
-      listAdd(clientSideList, "Lo-Dash", _.VERSION);
+      clientSideListAdd("Lo-Dash", _.VERSION);
     } else {
-      listAdd(clientSideList, "Underscore.js", _.VERSION);
+      clientSideListAdd("Underscore.js", _.VERSION);
     }
   }
 
   if (isDeeplyDefined("YT")) {
-    listAdd(clientSideList, "YouTube iframe API");
+    clientSideListAdd("YouTube iframe API");
   }
 
   /* global YUI */
   if (isDeeplyDefined("YUI")) {
-    listAdd(clientSideList, "YUI", YUI.version);
+    clientSideListAdd("YUI", YUI.version);
   }
 
   if (isDeeplyDefined("$.zepto")) {
-    listAdd(clientSideList, "Zepto");
+    clientSideListAdd("Zepto");
   }
 
   // Analytics and Performance Metrics
   if (isDeeplyDefined("udm_")) {
-    listAdd(clientSideList, "ComScore");
+    clientSideListAdd("ComScore");
   }
 
   if (isDeeplyDefined("CE2")) {
-    listAdd(clientSideList, "CrazyEgg");
+    clientSideListAdd("CrazyEgg");
   }
 
   if (isDeeplyDefined("_gauges")) {
-    listAdd(clientSideList, "Gauges");
+    clientSideListAdd("Gauges");
   }
 
   if (isDeeplyDefined("_gaq")) {
-    listAdd(clientSideList, "Google Analytics (Old Syntax)");
+    clientSideListAdd("Google Analytics (Old Syntax)");
   }
 
   if (isDeeplyDefined("ga")) {
-    listAdd(clientSideList, "Google Analytics");
+    clientSideListAdd("Google Analytics");
   }
 
   if (isDeeplyDefined("Mint")) {
-    listAdd(clientSideList, "Mint");
+    clientSideListAdd("Mint");
   }
 
   if (isDeeplyDefined("Mixpanel")) {
-    listAdd(clientSideList, "Mixpanel");
+    clientSideListAdd("Mixpanel");
   }
 
   if (isDeeplyDefined("NREUM")) {
-    listAdd(clientSideList, "New Relic");
+    clientSideListAdd("New Relic");
   }
 
   if (isDeeplyDefined("NolTracker") || isDeeplyDefined("trac.pvar")) {
-    listAdd(clientSideList, "NetRatings Site Census 6.x");
+    clientSideListAdd("NetRatings Site Census 6.x");
   }
 
   if (isDeeplyDefined("rsCi")) {
-    listAdd(clientSideList, "NetRatings Site Census 5.x");
+    clientSideListAdd("NetRatings Site Census 5.x");
   }
 
   if (isDeeplyDefined("opxLoad")) {
-    listAdd(clientSideList, "Optimix");
+    clientSideListAdd("Optimix");
   }
 
   if (isDeeplyDefined("Piwik")) {
-    listAdd(clientSideList, "Piwik");
+    clientSideListAdd("Piwik");
   }
 
   if (isDeeplyDefined("__qc")) {
-    listAdd(clientSideList, "QuantCast");
+    clientSideListAdd("QuantCast");
   }
 
   if (isDeeplyDefined("ycsdone")) {
-    listAdd(clientSideList, "Yahoo Analytics");
+    clientSideListAdd("Yahoo Analytics");
   }
 
   // Social Plugins
   if (isDeeplyDefined("addthis")) {
-    listAdd(clientSideList, "AddThis");
+    clientSideListAdd("AddThis");
   }
 
   if (isDeeplyDefined("DISQUSWIDGETS")) {
-    listAdd(clientSideList, "Disqus");
+    clientSideListAdd("Disqus");
   }
 
   if (isDeeplyDefined("FB")) {
-    listAdd(clientSideList, "Facebook Javascript SDK");
+    clientSideListAdd("Facebook Javascript SDK");
   }
 
   if (isDeeplyDefined("gapi")) {
-    listAdd(clientSideList, "Google+ API");
+    clientSideListAdd("Google+ API");
   }
 
   if (isDeeplyDefined("__twttrlr") || isDeeplyDefined("twttr")) {
-    listAdd(clientSideList, "Twitter Widgets");
+    clientSideListAdd("Twitter Widgets");
   }
 
-  const clientSide = `Clientside Technology:\n${listDelimiter + (clientSideList.join(listDelimiter) || unknownString)}`;
+  const clientSide = renderListWithHeader('Clientside Technology', clientSideList);
 
   if (confirm(`${clientSide}\n\nDetect serverside technology?\n(Downloads the page again)`)) {
     requestPage((headers) => {
       if (headers['X-Powered-By']) {
-        listAdd(serverSideList, "Powered By: " + headers['X-Powered-By']);
+        serverSideListAdd("Powered By:", headers['X-Powered-By']);
       }
 
       if (headers.Server) {
-        listAdd(serverSideList, "Server: " + headers.Server);
+        serverSideListAdd("Server:", headers.Server);
       }
 
-      alert(`${clientSide}\n\nServerside Technology:\n${listDelimiter + (serverSideList.join(listDelimiter) || unknownString)}`);
+      alert(`${clientSide}\n\n${renderListWithHeader('Serverside Technology', serverSideList)}`);
     });
   }
 
