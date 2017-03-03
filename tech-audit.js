@@ -7,7 +7,7 @@
   }
 
   const renderListWithHeader = (header, list) => {
-    list = list || ['Unknown!'];
+    list = list.length ? list : ['Unknown!'];
     list.unshift(`${header}:\n`);
     return list.join("\n• ");
   };
@@ -40,7 +40,7 @@
         currentXhr.getAllResponseHeaders().toString()
           .split(/\r?\n/)
           .forEach((headerString) => {
-            const splitHeader = headerString.split(/\:\w*/);
+            const splitHeader = headerString.split(/\:\s*/);
             xhrHeaders[splitHeader[0]] = splitHeader[1];
           });
 
