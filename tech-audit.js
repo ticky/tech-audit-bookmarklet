@@ -28,6 +28,7 @@
       )
     )
   );
+  const elementExists = (selector) => document.querySelector(selector) !== null;
 
   const requestPage = (callback) => {
     const currentXhr = new XMLHttpRequest();
@@ -266,6 +267,10 @@
 
   if (isDeeplyDefined("__twttrlr") || isDeeplyDefined("twttr")) {
     clientSideListAdd("Twitter Widgets");
+  }
+
+  if (elementExists('[data-reactroot]') || elementExists('[data-reactid]')) {
+    clientSideListAdd("React");
   }
 
   const clientSide = renderListWithHeader('Clientside Technology', clientSideList);
