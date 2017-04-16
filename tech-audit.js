@@ -280,6 +280,10 @@
         serverSideListAdd("Server:", headers.Server);
       }
 
+      if (headers['X-Clacks-Overhead']) { // A man is not dead while his name is still spoken: gnuterrypratchett.com
+        serverSideListAdd("Clacks Overhead:", headers['X-Clacks-Overhead']);
+      }
+
       alert(`${clientSide}\n\n${renderListWithHeader('Serverside Technology', serverSideList)}`);
     });
   }
