@@ -119,6 +119,10 @@
     clientSideListAdd("Prototype.js", Prototype.Version);
   }
 
+  if (elementExists('[data-reactroot],[data-reactid]')) {
+    clientSideListAdd("React");
+  }
+
   /* global requirejs */
   if (isDeeplyDefined("requirejs")) {
     clientSideListAdd("Require.js", requirejs.version);
@@ -267,10 +271,6 @@
 
   if (isDeeplyDefined("__twttrlr") || isDeeplyDefined("twttr")) {
     clientSideListAdd("Twitter Widgets");
-  }
-
-  if (elementExists('[data-reactroot]') || elementExists('[data-reactid]')) {
-    clientSideListAdd("React");
   }
 
   const clientSide = renderListWithHeader('Clientside Technology', clientSideList);
