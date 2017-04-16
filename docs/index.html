@@ -32,9 +32,10 @@
 </head>
 <body>
   <h1>The Technology Audit Bookmarklet</h1>
-  <h2>Instructions</h2>
-  <p>Assumes you're using iOS and Safari. Steps might differ for other platforms.</p>
   <p><a href="https://github.com/ticky/tech-audit-bookmarklet">Fork this on Github</a></p>
+  <h2>Instructions</h2>
+  <h3>Method one</h3>
+  <p>Assumes you're using iOS and Safari. Steps might differ for other platforms.</p>
   <ol>
     <li>
       Select and copy all of the code in the textbox below (Tap it and choose "Select All", then "Copy")<br/>
@@ -48,6 +49,15 @@
     <li>Paste the contents of your clipboard</li>
     <li>Tap "Done"</li>
   </ol>
+  <h3>Method two</h3>
+  <p>Works well on Google Chrome and Safari for desktop, may work in other browsers.</p>
+  <ol>
+    <li>Ensure the bookmark/favourites bar is showing (⇧⌘B / ⇧^B for Chrome and Safari)</li>
+    <li>
+      Drag the following link to the bookmarks bar:<br/>
+      <a href="#" id="bookmarklink">Technology Audit</a>
+    </li>
+  </ol>
 
   <p>To use it on a page, simply open your bookmarks and tap "Technology Audit".</p>
 
@@ -57,6 +67,7 @@
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           document.getElementById('bookmarklet').value = 'javascript:' + xhr.response;
+          document.getElementById('bookmarklink').href = 'javascript:' + xhr.response;
         }
       };
       xhr.send(null);
