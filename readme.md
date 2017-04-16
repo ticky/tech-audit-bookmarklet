@@ -73,10 +73,11 @@ Fork and clone the repo, make changes to `tech-audit.js`.
 _Copying an existing test is advisable._
 
 * Add a detection for the framework
-  - Client side frameworks are detected by looking at
-    variable definitions with `isDeeplyDefined()` or DOM elements with `elementExists()`
+  - Client side frameworks are detected by looking at variable definitions
+    with `isDeeplyDefined()` or DOM elements with `elementExists()`
   - Server side frameworks are detected by inspecting request headers
 * Report the detected framework
   - Client side frameworks are reported by calling `clientSideListAdd()`
   - Server side frameworks are reported by calling `serverSideListAdd()`
-  - Provide the official name of the framework as the first parameter. If available, provide the version as a second parameter.
+  - Provide the official name of the framework as the first parameter.
+    If available, provide the version as a second parameter.
