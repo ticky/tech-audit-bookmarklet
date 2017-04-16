@@ -28,6 +28,7 @@
       )
     )
   );
+  const elementExists = (selector) => document.querySelector(selector) !== null;
 
   const requestPage = (callback) => {
     const currentXhr = new XMLHttpRequest();
@@ -116,6 +117,10 @@
   /* global Prototype */
   if (isDeeplyDefined("Prototype")) {
     clientSideListAdd("Prototype.js", Prototype.Version);
+  }
+
+  if (elementExists('[data-reactroot],[data-reactid]')) {
+    clientSideListAdd("React");
   }
 
   /* global requirejs */
