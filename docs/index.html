@@ -32,13 +32,23 @@
 </head>
 <body>
   <h1>The Technology Audit Bookmarklet</h1>
-  <h2>Instructions</h2>
-  <p>Assumes you're using iOS and Safari. Steps might differ for other platforms.</p>
   <p><a href="https://github.com/ticky/tech-audit-bookmarklet">Fork this on Github</a></p>
+  <h2>Instructions</h2>
+  <h3>Desktop</h3>
+  <p>Works well on Google Chrome and Safari for desktop, may work in other browsers.</p>
+  <ol>
+    <li>Ensure the bookmark/favourites bar is showing (⇧⌘B / ⇧^B for Chrome and Safari)</li>
+    <li>
+      Drag the following link to the bookmarks bar:<br/>
+      <a href="#" id="bookmarklet-link" onclick="event.preventDefault();alert('You gotta drag, not click!')">Technology Audit</a>
+    </li>
+  </ol>
+  <h3>Mobile</h3>
+  <p>Assumes you're using iOS and Safari. Steps might differ for other platforms.</p>
   <ol>
     <li>
       Select and copy all of the code in the textbox below (Tap it and choose "Select All", then "Copy")<br/>
-      <textarea id="bookmarklet">loading...</textarea>
+      <textarea id="bookmarklet-text">loading...</textarea>
     </li>
     <li>Bookmark this page (Using the "Share" button on the bottom bar)</li>
     <li>Open the bookmark manager (Using the book icon on the bottom bar)</li>
@@ -56,7 +66,8 @@
       xhr.open('GET', 'tech-audit.bookmarklet.js', true);
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-          document.getElementById('bookmarklet').value = 'javascript:' + xhr.response;
+          document.getElementById('bookmarklet-text').value = 'javascript:' + xhr.response;
+          document.getElementById('bookmarklet-link').href = 'javascript:' + xhr.response;
         }
       };
       xhr.send(null);
