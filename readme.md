@@ -57,3 +57,26 @@ Bookmarklet for quickly detecting technologies in use on the web. Really useful 
 ## Get it
 
 Get it from the [GitHub Page](http://ticky.github.io/tech-audit-bookmarklet).
+
+## Developing
+
+Fork and clone the repo, make changes to `tech-audit.js`.
+
+#### Useful commands
+
+* Run `yarn lint` to check for linter errors.
+* Run `yarn build` to build the bookmarklet file in `docs/`.
+* Run `yarn serve` to test the bookmarklet page and new bookmarklet.
+
+#### Adding new technologies
+
+_Copying an existing test is advisable._
+
+* Add a detection for the framework
+  - Client side frameworks are detected by looking at
+    variable definitions with `isDeeplyDefined()` or DOM elements with `elementExists()`
+  - Server side frameworks are detected by inspecting request headers
+* Report the detected framework
+  - Client side frameworks are reported by calling `clientSideListAdd()`
+  - Server side frameworks are reported by calling `serverSideListAdd()`
+  - Provide the official name of the framework as the first parameter. If available, provide the version as a second parameter.
