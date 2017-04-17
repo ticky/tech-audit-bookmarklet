@@ -1,5 +1,7 @@
 # Technology Audit Bookmarklet
 
+[![Build Status](https://travis-ci.org/ticky/tech-audit-bookmarklet.svg?branch=master)](https://travis-ci.org/ticky/tech-audit-bookmarklet)
+
 Bookmarklet for quickly detecting technologies in use on the web. Really useful for mobile devices where an inspector or View Source option is hard to come by.
 
 ## Features
