@@ -41,7 +41,7 @@
         currentXhr.getAllResponseHeaders().toString()
           .split(/\r?\n/)
           .forEach((headerString) => {
-            const splitHeader = headerString.split(/\:\s*/);
+            const splitHeader = headerString.split(/:\s*/);
             xhrHeaders[splitHeader[0]] = splitHeader[1];
           });
 
