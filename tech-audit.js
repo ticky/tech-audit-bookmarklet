@@ -240,8 +240,8 @@
     clientSideListAdd("Optimix");
   }
 
-  if (isDeeplyDefined("Piwik")) {
-    clientSideListAdd("Piwik");
+  if (isDeeplyDefined("Matomo") || isDeeplyDefined("Piwik") || isDeeplyDefined("_paq")) {
+    clientSideListAdd("Matomo (formerly Piwik)");
   }
 
   if (isDeeplyDefined("__qc")) {
