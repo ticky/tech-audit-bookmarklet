@@ -41,12 +41,12 @@ Bookmarklet for quickly detecting technologies in use on the web. Really useful 
   * CrazyEgg
   * Gauges
   * Google Analytics
+  * Matomo (formerly Piwik)
   * Mint
   * Mixpanel
   * New Relic
   * Neilsen/NetRatings Site Census (5.x and 6.x)
   * Optimix
-  * Piwik
   * QuantCast
   * Yahoo Small Business Hosting Analytics
 * Detects social plug-ins
