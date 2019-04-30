@@ -281,8 +281,8 @@
         serverSideListAdd("Powered By:", headers['X-Powered-By']);
       }
 
-      if (headers.Server) {
-        serverSideListAdd("Server:", headers.Server);
+      if (headers.Server || headers.server) {
+        serverSideListAdd("Server:", headers.Server || headers.server);
       }
 
       alert(`${clientSide}\n\n${renderListWithHeader('Serverside Technology', serverSideList)}`);
