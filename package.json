@@ -12,33 +12,27 @@
   "author": "Jessica Stokes <hello@jessicastokes.net>",
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "6.26.0",
-    "babel-preset-babili": "0.1.4",
-    "babel-preset-env": "1.7.0",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-preset-minify": "^0.5.0",
     "eslint": "5.16.0",
     "http-server": "0.11.1"
   },
   "babel": {
     "presets": [
       [
-        "babili",
+        "minify",
         {
           "mangle": {
-            "topLevel": true,
-            "eval": true
+            "topLevel": true
           }
         }
       ],
       [
-        "env",
+        "@babel/preset-env",
         {
-          "targets": {
-            "browsers": [
-              "> 5%",
-              "last 2 versions"
-            ],
-            "modules": false
-          }
+          "modules": false
         }
       ]
     ]
