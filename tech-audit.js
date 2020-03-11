@@ -272,6 +272,10 @@
   if (isDeeplyDefined("__twttrlr") || isDeeplyDefined("twttr")) {
     clientSideListAdd("Twitter Widgets");
   }
+  
+  if (isDeeplyDefined("wixBiSession")) {
+    clientSideListAdd("Wix.com");
+  }
 
   const clientSide = renderListWithHeader('Clientside Technology', clientSideList);
 
