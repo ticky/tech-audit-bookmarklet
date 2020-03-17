@@ -273,6 +273,10 @@
     clientSideListAdd("Twitter Widgets");
   }
 
+  if (isDeeplyDefined("wixBiSession")) {
+    clientSideListAdd("Wix.com");
+  }
+
   const clientSide = renderListWithHeader('Clientside Technology', clientSideList);
 
   if (confirm(`${clientSide}\n\nDetect serverside technology?\n(Downloads the page again)`)) {
